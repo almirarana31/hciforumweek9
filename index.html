@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HIC ASSIGNMENT 3</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="stylesheet" href="bootstrap.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="text-center">My Portfolio</h1>
+      <div class="text-center">
+        <button data-target="about-me" class="btn btn-primary" style="font-family: Georgia, 'Times New Roman', Times, serif; background-color: #EEAA94; border-color: transparent;">About Me</button>
+        <button data-target="education" class="btn btn-primary" style=" font-family: Georgia, 'Times New Roman', Times, serif; background-color: #EEAA94;border-color: transparent;">Education</button>
+        <button data-target="skills" class="btn btn-primary" style=" font-family: Georgia, 'Times New Roman', Times, serif; background-color: #EEAA94; border-color: transparent;">Skills and Experience</button>
+      </div>
+    </div>
+  </header>
+  <br>
+  <section id="about-me" class="container">
+    <h2 class="text-center">About Me</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <p style="font-size: 20px; font-family: Georgia, 'Times New Roman', Times, serif; color: #76493D; text-align: justify;">
+          I am a first-year student at Binus Senayan, in the International Computer Science Major. I live with my family in Kebayoran Baru. I have 2 older sisters and am the youngest daughter. I have 5 cats and 2 dogs. I joined the Computer Science Major because I am interested in working as a video game developer. My hobbies include cooking, playing video games, and drawing.
+        </p>
+      </div>
+      <div class="col-md-6">
+        <img src="IMG_9702.jpg" alt="" class="img-fluid">
+      </div>
+    </div>
+    <br>
+  </section>
+  <section id="education" class="container" style="text-align: center;">
+    <h2 class="text-center">Education</h2>
+    <div class="edu">
+      <button type="button" class="collapsible btn btn-primary" style="background-color:#EEAA94; border-color: transparent;">Elementary</button>
+      <div class="content">
+        <img src="elementary.png" class="img-fluid">
+      </div>
+      <button type="button" class="collapsible btn btn-primary" style="background-color:#EEAA94; border-color: transparent;">Middle School</button>
+      <div class="content">
+        <img src="midschool.png" class="img-fluid">
+      </div>
+      <button type="button" class="collapsible btn btn-primary" style="background-color:#EEAA94; border-color: transparent;">High School</button>
+      <div class="content">
+        <img src="highschool.png" class="img-fluid">
+      </div>
+      <button type="button" class="collapsible btn btn-primary" style="background-color:#EEAA94; border-color: transparent;">University</button>
+      <div class="content">
+        <img src="binus.png" class="img-fluid">
+      </div>
+    </div>
+  </section>
+  <br>
+  <section id="skills" class="container">
+    <h2 class="text-center">Skills and Experience</h2>
+    <div class="row">
+      <div class="col-md-3">
+        <p>Organizational</p>
+        <ul>
+          <li>President of High School Student Council</li>
+          <li>Secretary of RoboGals</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <p>Soft Skills</p>
+        <ul>
+          <li>Microsoft Word</li>
+          <li>Microsoft Excel</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <p>Programming</p>
+        <ul>
+          <li>Python</li>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <p>Design</p>
+        <ul>
+          <li>Canva</li>
+          <li>Digital Illustration</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="contacts container">
+    <footer>
+      <h2 class="text-center">Contacts</h2>
+      <a href="https://instagram.com/ally.fsr/" class="btn btn-primary" style="font-family: Georgia, 'Times New Roman', Times, serif; background-color:#EEAA94; border-color: transparent;">@ally.fsr</a><br>
+      <a href="mailto:almira.rana@binus.ac.id" class="btn btn-primary" style="font-family: Georgia, 'Times New Roman', Times, serif; background-color:#EEAA94;border-color: transparent;">almira.rana@binus.ac.id</a>
+    </footer>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const scrollButtonAbMe = document.querySelector("[data-target='about-me']");
+const scrollToSectionAbMe = document.getElementById("about-me");
+scrollButtonAbMe.addEventListener("click", function () {
+    console.log("about-me Button clicked");
+    scrollToSectionAbMe.scrollIntoView({ behavior: "smooth" });
+});
+
+const scrollButtonEd = document.querySelector("[data-target='education']");
+const scrollToSectionEd = document.getElementById("education");
+scrollButtonEd.addEventListener("click", function () {
+    console.log("education Button clicked");
+    scrollToSectionEd.scrollIntoView({ behavior: "smooth" });
+});
+
+const scrollButtonSk = document.querySelector("[data-target='skills']");
+const scrollToSectionSk = document.getElementById("skills");
+scrollButtonSk.addEventListener("click", function () {
+    console.log("skills Button clicked");
+    scrollToSectionSk.scrollIntoView({ behavior: "smooth" });
+});
+
+
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+  </script>
+</body>
+</html>
